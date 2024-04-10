@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 /// 升级弹窗
-void showUpgradeDialog(
+Future<void> showUpgradeDialog(
   BuildContext context, {
   required String title,
   required String content,
   required String upgradeButtonText,
   required GestureTapCallback onTapUpgrade,
   bool forceUpdate = false,
-}) {
-  showDialog(
+}) async {
+  await showDialog(
     context: context,
     barrierDismissible: forceUpdate != true,
     builder: (BuildContext context) {
